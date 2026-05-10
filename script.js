@@ -1,4 +1,4 @@
-// Dark Mode Toggle
+// ========== MODO OSCURO/CLARO ==========
 const toggleBtn = document.getElementById('darkModeToggle');
 const body = document.body;
 const icon = toggleBtn.querySelector('i');
@@ -13,11 +13,12 @@ toggleBtn.addEventListener('click', () => {
     body.classList.toggle('light-mode');
     const isLight = body.classList.contains('light-mode');
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    // Cambia el icono
     icon.classList.toggle('fa-moon', !isLight);
     icon.classList.toggle('fa-sun', isLight);
 });
 
-// Velocity IA (simulación con respuestas dinámicas)
+// ========== VELOCITY IA (BUSCADOR INTELIGENTE) ==========
 const iaForm = document.getElementById('ia-form');
 const iaInput = document.getElementById('ia-input');
 const iaResponse = document.getElementById('ia-response');
@@ -27,20 +28,15 @@ iaForm.addEventListener('submit', async (e) => {
     const query = iaInput.value.trim();
     if (!query) return;
 
-    // Mostrar estado "pensando..."
+    // Mostrar "pensando..."
     iaResponse.style.display = 'block';
-    iaResponse.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Velocity IA está procesando tu consulta...';
+    iaResponse.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Velocity IA analizando...';
 
-    // Simular petición a IA (puedes reemplazar con una API real)
+    // Simular respuesta
     await fakeIARequest(query);
 });
 
-/**
- * Simula una respuesta de IA basada en palabras clave.
- * En un futuro aquí puedes hacer fetch a la API de Gemini, GPT, etc.
- */
 async function fakeIARequest(query) {
-    // Espera simulada (como si consultara un servidor)
     await new Promise(resolve => setTimeout(resolve, 1500));
 
     const q = query.toLowerCase();
@@ -61,9 +57,13 @@ async function fakeIARequest(query) {
         - Teclado mecánico HyperX Alloy Origins – $110<br>
         - Mouse Logitech G Pro X Superlight – $150<br>
         <em>La velocidad en tus manos.</em>`;
+    } else if (q.includes('gear') || q.includes('velocity')) {
+        respuesta = `🛡️ <strong>Velocity Gear Oficial:</strong><br>
+        - Playeras, hoodies y accesorios con el logo del escudo.<br>
+        <em>Próximamente en la tienda.</em>`;
     } else {
         respuesta = `🤖 Velocity IA sugiere:<br>
-        Prueba con palabras clave como "procesador", "laptop", "teclado" o "periférico".<br>
+        Prueba con palabras clave como "procesador", "laptop", "teclado" o "gear".<br>
         ¡Estoy aprendiendo cada día!`;
     }
 
