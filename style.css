@@ -1,4 +1,4 @@
-/* ========== VARIABLES ========== */
+/* ========== VARIABLES (Tema Oscuro por defecto) ========== */
 :root {
     --accent: #b300b3;
     --accent-hover: #990099;
@@ -264,6 +264,50 @@ body {
     color: var(--accent);
     letter-spacing: 2px;
     font-size: 1.1rem;
+}
+
+/* ========== SECCIÓN JUEGO ========== */
+.seccion-juego {
+    padding: 4rem 5%;
+    background: var(--bg);
+    text-align: center;
+}
+
+.instrucciones {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+.juego-container {
+    display: inline-block;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(179, 0, 179, 0.2);
+}
+
+#gameCanvas {
+    display: block;
+    background: #050505;
+}
+
+.btn-reiniciar {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 0.8rem 2rem;
+    margin-top: 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+}
+
+.btn-reiniciar:hover {
+    background: var(--accent-hover);
 }
 
 /* ========== FOOTER ========== */
